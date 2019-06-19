@@ -6,11 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ashwilliams87.saitamachallenge.adapter.TaskAdapter
+import com.ashwilliams87.saitamachallenge.intarfaces.MainContract
 import com.ashwilliams87.saitamachallenge.interactor.TaskInteractor
 import com.ashwilliams87.saitamachallenge.presenter.MainPresenter
 import java.util.ArrayList
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainContract.View {
 
 //    private val spinnerDay: Spinner = findViewById(R.id.date_day_spinner)
 //    private val spinnerMonth: Spinner = findViewById(R.id.date_month_spinner)
@@ -43,4 +44,11 @@ class MainActivity : AppCompatActivity() {
         mainPresenter = MainPresenter(this, TaskInteractor());
         mainPresenter!!.loadTasks()
     }
+
+    override fun updateTasksRecyclerView(tasks: List<Task>) {
+
+        
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }
